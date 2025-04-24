@@ -3,6 +3,12 @@ Library           SeleniumLibrary
 Library           String
 Library           BuiltIn
 
+*** Documentation ***
+This test suite contains login-related tests for the Automation Exercise website.
+It verifies the login functionality with valid and invalid credentials, as well as edge cases such as missing parameters.
+
+Each test case is designed to validate the expected HTTP status codes and responses for the login API endpoint.
+
 *** Variables ***
 ${URL}            https://automationexercise.com
 ${PASSWORD}       TestPassword123

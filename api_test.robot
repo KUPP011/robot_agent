@@ -1,6 +1,12 @@
 *** Settings ***
 Library           RequestsLibrary
 
+*** Documentation ***
+This test suite contains API tests for the Automation Exercise website.
+It verifies various endpoints such as product listing, user login, account creation, and account management.
+
+Each test case is designed to validate the expected HTTP status codes and responses for the respective API endpoints.
+
 *** Variables ***
 ${BASE_URL}       https://automationexercise.com
 
