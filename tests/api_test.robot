@@ -1,7 +1,7 @@
 *** Settings ***
 Library           RequestsLibrary
-Resource          resources/api_keywords.robot
-Resource          resources/api_variables.robot
+Resource          ../resources/api_keywords.robot
+Resource          ../resources/api_variables.robot
 
 # This test suite contains API tests for the Automation Exercise website.
 # It verifies various endpoints such as product listing, user login, account creation, and account management.
