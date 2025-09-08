@@ -5,7 +5,24 @@ This repository contains test automation scripts for the Automation Exercise web
 ## Project Structure
 
 - `tests/`: Contains all test files.
+  - `login_test.robot`: Contains login functionality tests and automation exercise test cases 21-22
+  - `api_test.robot`: Contains API endpoint tests
 - `resources/`: Contains reusable keywords and variables for the tests.
+  - `login_keywords.robot`: Keywords for login and UI automation tests
+  - `login_variables.robot`: Variables for login and UI tests
+  - `api_keywords.robot`: Keywords for API tests  
+  - `api_variables.robot`: Variables for API tests
+
+## Test Cases Implemented
+
+### UI Tests (login_test.robot)
+- Signup with valid details
+- Login with valid details  
+- **Test Case 21**: Add review on product
+- **Test Case 22**: Add to cart from recommended items
+
+### API Tests (api_test.robot)
+- Product listing, user login, account creation and management APIs
 
 ## Prerequisites
 
