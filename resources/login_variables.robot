@@ -5,3 +5,4 @@ ${VALID_LOGIN_EMAIL}    validuser@example.com
 ${VALID_LOGIN_PASSWORD}    validpassword123
 ${SIGNUP_EMAIL}    signupuser@example.com
 ${SIGNUP_PASSWORD}    signuppassword123
+${SEARCH_PRODUCT}    Blue Top
