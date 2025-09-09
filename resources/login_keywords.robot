@@ -34,3 +34,25 @@ Login With Valid Details
     Input Text      xpath=//input[@name='password']    ${PASSWORD}
     Click Button    xpath=//button[contains(text(),'Login')]
     Wait Until Page Contains Element    xpath=//*[contains(text(),'Logged in as')]
+
+Logout User
+    [Documentation]    Automates the logout process after successful login.
+    Open Browser    ${URL}    chrome
+    Maximize Browser Window
+    Click Element   xpath=//a[contains(text(),'Signup / Login')]
+    Input Text      xpath=//input[@name='email']    ${EMAIL}
+    Input Text      xpath=//input[@name='password']    ${PASSWORD}
+    Click Button    xpath=//button[contains(text(),'Login')]
+    Wait Until Page Contains Element    xpath=//*[contains(text(),'Logged in as')]
+    Click Element   xpath=//a[contains(text(),'Logout')]
+    Wait Until Page Contains Element    xpath=//a[contains(text(),'Signup / Login')]
+
+Register User With Existing Email
+    [Documentation]    Attempts to register with an already existing email to verify error handling.
+    Open Browser    ${URL}    chrome
+    Maximize Browser Window
+    Click Element   xpath=//a[contains(text(),'Signup / Login')]
+    Input Text      xpath=//input[@name='name']    ${USERNAME}
+    Input Text      xpath=//form[@action='/signup']/input[@name='email']   ${EMAIL}
+    Click Button    xpath=//button[contains(text(),'Signup')]
+    Wait Until Page Contains Element    xpath=//*[contains(text(),'Email Address already exist!')]
