@@ -34,3 +34,44 @@ Login With Valid Details
     Input Text      xpath=//input[@name='password']    ${PASSWORD}
     Click Button    xpath=//button[contains(text(),'Login')]
     Wait Until Page Contains Element    xpath=//*[contains(text(),'Logged in as')]
+
+Verify Scroll Up Using Arrow Button And Scroll Down
+    [Documentation]    Test Case 25: Verify Scroll Up using 'Arrow' button and Scroll Down functionality
+    Open Browser    ${URL}    headlesschrome
+    Set Selenium Timeout    30s
+    Maximize Browser Window
+    # Verify that home page is visible successfully
+    Wait Until Page Contains Element    xpath=//body    timeout=30
+    Page Should Contain    AutomationExercise
+    # Scroll down page to bottom
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Sleep    3s
+    # Verify 'SUBSCRIPTION' text is visible
+    Page Should Contain    SUBSCRIPTION
+    # Click on arrow at bottom right side to move upward (if present)
+    ${arrow_exists}=    Run Keyword And Return Status    Element Should Be Visible    xpath=//a[@id='scrollUp']
+    Run Keyword If    ${arrow_exists}    Click Element    xpath=//a[@id='scrollUp']
+    ...    ELSE    Log    Arrow button not found, scrolling manually
+    Run Keyword If    not ${arrow_exists}    Execute JavaScript    window.scrollTo(0, 0)
+    Sleep    3s
+    # Verify that page is scrolled up and text is visible on screen
+    Page Should Contain    AutomationExercise
+
+Verify Scroll Up Without Arrow Button And Scroll Down
+    [Documentation]    Test Case 26: Verify Scroll Up without 'Arrow' button and Scroll Down functionality
+    Open Browser    ${URL}    headlesschrome
+    Set Selenium Timeout    30s
+    Maximize Browser Window
+    # Verify that home page is visible successfully
+    Wait Until Page Contains Element    xpath=//body    timeout=30
+    Page Should Contain    AutomationExercise
+    # Scroll down page to bottom
+    Execute JavaScript    window.scrollTo(0, document.body.scrollHeight)
+    Sleep    3s
+    # Verify 'SUBSCRIPTION' text is visible
+    Page Should Contain    SUBSCRIPTION
+    # Scroll up page to top (without using arrow button)
+    Execute JavaScript    window.scrollTo(0, 0)
+    Sleep    3s
+    # Verify that page is scrolled up and text is visible on screen
+    Page Should Contain    AutomationExercise
